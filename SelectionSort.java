@@ -22,7 +22,7 @@ public class SelectionSort {
             arr[key] = temp;
         }
         for(int i=0;i<n;i++){
-        System.err.println(arr[i] + " ");
+            System.err.println(arr[i] + " ");
         }
     }
 }

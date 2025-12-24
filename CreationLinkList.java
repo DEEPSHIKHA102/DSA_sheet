@@ -61,33 +61,71 @@ public class CreationLinkList {
         Node head = null;
         Node tail = null;
         
-        for (int i = 0; i < n; i++) {
+        // for (int i = 0; i < n; i++) {
+        //     int data = sc.nextInt();
+        //     Node newNode = new Node(data);
+            
+        //     // adding data as forword direction
+
+        //     // if (head == null) {
+        //     //     head = newNode;
+        //     //     tail = newNode;   
+        //     // } 
+        //     //else {
+        //     //     tail.next = newNode;
+        //     //     tail = newNode;
+        //     // }
+
+
+
+        //     // adding data as backward direction
+
+        //     newNode.next = head;
+        //     head = newNode;
+
+        // }
+
+
+        
+        // adding data at specific posiiton
+
+         for (int i = 0; i < n; i++) {
             int data = sc.nextInt();
             Node newNode = new Node(data);
-            
-            // adding data as forword direction
 
-            // if (head == null) {
-            //     head = newNode;
-            //     tail = newNode;   
-            // } 
-            //else {
-            //     tail.next = newNode;
-            //     tail = newNode;
-            // }
-
-
-
-            // adding data as backward direction
-
-            newNode.next = head;
-            head = newNode;
+            if (head == null) {
+                head = newNode;
+                tail = newNode;
+            } else {
+                tail.next = newNode;
+                tail = newNode;
+            }
         }
 
+        
+        
 
+        int newData = sc.nextInt();
+        int pos = sc.nextInt();
 
+        Node newNode = new Node(newData);
 
-       
+        
+        if (pos == 0) {
+            newNode.next = head;
+            head = newNode;
+        }else{
+            Node temp = head;
+            while(pos!=0 && temp.next!= null){
+                temp = temp.next;
+                pos--;
+            }
+            newNode.next = temp.next;
+            temp.next = newNode;
+            
+        }
+
+    
         Node temp = head;
         while (temp != null) {
             System.out.print(temp.data + " -> ");

@@ -64,15 +64,28 @@ public class CreationLinkList {
         for (int i = 0; i < n; i++) {
             int data = sc.nextInt();
             Node newNode = new Node(data);
+            
+            // adding data as forword direction
 
-            if (head == null) {
-                head = newNode;
-                tail = newNode;   
-            } else {
-                tail.next = newNode;
-                tail = newNode;
-            }
+            // if (head == null) {
+            //     head = newNode;
+            //     tail = newNode;   
+            // } 
+            //else {
+            //     tail.next = newNode;
+            //     tail = newNode;
+            // }
+
+
+
+            // adding data as backward direction
+
+            newNode.next = head;
+            head = newNode;
         }
+
+
+
 
        
         Node temp = head;
